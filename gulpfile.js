@@ -24,11 +24,10 @@ $.gulp.task('default', $.gulp.series(
   $.gulp.parallel(
     'sass',
     'pug',
-    'js:foundation',
+    // 'js:foundation',
     'js:process',
     'copy:image',
     'css:foundation',
-    'sprite:svg'
   ),
   $.gulp.parallel(
     'watch',

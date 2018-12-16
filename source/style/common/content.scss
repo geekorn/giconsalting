@@ -1,0 +1,59 @@
+.content {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__company-info {
+    flex-basis: 50%;
+  }
+  &__form {
+    flex-basis: 30%;
+  }
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+
+  &__name {
+    font-size: 5rem;
+    color: #003399;
+  }
+}
+
+.form {
+  position: relative;
+  padding: 30px;
+  color: #ffffff;
+
+  &__header {
+    text-align: center;
+  }
+  &__title {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+
+  &__header, &__input, &__submit {
+    margin-bottom: 20px;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #003399;
+    opacity: 0.8;
+    z-index: -1;
+  }
+}

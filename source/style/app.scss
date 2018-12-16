@@ -2,4 +2,26 @@ body {
   margin: 0;
 }
 
-@import 'common/greating';
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 30px;
+  border-radius: 5px;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@import 'common/header';
+@import 'common/content';
+@import 'common/footer';

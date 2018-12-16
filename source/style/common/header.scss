@@ -1,0 +1,52 @@
+.header {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #000;
+  }
+
+  &__logo {
+    width: 90px;
+    height: 90px;
+    background-color: blue;
+  }
+
+  &__contacts {
+    // display: flex;
+  }
+}
+
+.contacts {
+  display: flex;
+
+  &__item {
+    &:not(:first-child) {
+      margin-left: 40px;
+    }
+  }
+
+  &__communication {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__phone, &__email, &__social {    
+    text-decoration: none;
+  }
+
+  &__phone {
+    margin-bottom: 5px;
+    color: inherit;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  &__email {
+    color: inherit;
+  }
+
+  &__social {
+    background-color: #02236b;
+  }
+}
