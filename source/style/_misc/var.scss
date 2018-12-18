@@ -1,0 +1,24 @@
+$root-font-size: 16px;
+
+$color-orange: #cc7306;
+$color-blue: #003399;
+
+$phone: 520px;
+$tablet: 960px;
+$laptop: 1200px;
+
+@mixin respond-to($media) {
+  @if $media == phone {
+    @media only screen and (max-width: $phone) { @content; }
+  }
+  @else if $media == tablet {
+    @media only screen and (max-width: $tablet - 1) { @content; }
+  }
+  @else if $media == laptop {
+    @media only screen and (max-width: $laptop) { @content; }
+  }
+}
+
+@function rem($pxsize,$rembase:$root-font-size) {
+  @return ($pxsize/$rembase) + 0rem
+}

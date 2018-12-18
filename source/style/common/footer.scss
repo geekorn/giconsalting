@@ -1,10 +1,28 @@
 .footer {
-  padding: 10px 0;
-  background-color: #003399;
+  padding: 10px 0 5px;
+  background-color: $color-blue;
   color: #ffffff;
 
   &__container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+  }
+
+  &__copyright {
+    font-size: rem(14px);
+  }
+
+  &__link {
+    display: block;
+    height: auto;
+
+    &:hover .footer__svg {
+      fill: rgba(#fff, 0.8);
+    }
+  }
+
+  &__svg {
+    fill: #ffffff;
   }
 }
