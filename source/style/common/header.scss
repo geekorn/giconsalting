@@ -1,10 +1,56 @@
 .header {
+  &__mobile {
+    box-sizing: border-box;
+    display: none;
+    width: 100%;
+    height: 50px;
+    padding: 5px 20px;
+
+    @include respond-to(tablet) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
   &__container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 10px 0;
     border-bottom: 1px solid #000;
+
+    
+    @include respond-to(tablet) {
+      display: none;
+      flex-direction: column;
+
+      &_active {
+        display: flex;
+      }
+    }
+  }
+
+  &__contacts {
+    margin-left: auto;
+  }
+
+  &__social {
+    margin-left: 40px;
+  }
+
+  @include respond-to(tablet) {    
+    &__container {
+      flex-direction: column;
+      width: 100%;
+      background-color: rgba($color-blue, 0.5);
+    }
+
+    &__logo, &__contacts {
+      margin-bottom: 20px;
+    }
+    &__contacts, &__social {
+      margin-left: 0;
+    }
   }
 }
 
@@ -26,6 +72,7 @@
 
   &__icon {
     margin-right: 10px;
+
     .icon {
       width: 45px;
       height: 45px;
@@ -36,10 +83,7 @@
   &__item {
     display: flex;
     align-items: center;
-
-    &:not(:first-child) {
-      margin-left: 40px;
-    }
+    margin-left: 40px;
   }
 
   &__communication {
@@ -63,5 +107,77 @@
 
   &__social {
     background-color: #02236b;
+  }  
+  
+  @include respond-to(phone) {
+    flex-direction: column;
+
+    &__item {
+      margin-left: 0;
+      &:not(:last-child){
+        margin-bottom: 20px;
+      }
+    }
+
+    &__icon {
+      display: none;
+    }
+  }
+}
+
+.header-mobile {
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+}
+
+.menu-button {
+  position: relative;
+  display: block;
+  width: 28px;
+  height: 20px;
+  padding: 0;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  z-index: 1100;
+  cursor: pointer;
+
+  &_closed &__hamburger {
+    background-color: transparent;
+    &:before {
+      top: -3px;
+      transform: rotate(-45deg);
+    }
+    &:after {
+      transform: rotate(45deg);
+    }
+  }
+
+  &__hamburger {
+    width: 100%;
+    height: 3px;
+    border-radius: 3px;
+    background-color: #fff;
+    transition: .3s;
+  
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 3px;
+      border-radius: 3px;
+      background-color: #fff;
+      transform-origin: right center;
+      transition: transform .3s;
+    }
+    &:before {
+      top: 0;
+    }
+    &:after {
+      bottom: 0;
+    }
+  
   }
 }
