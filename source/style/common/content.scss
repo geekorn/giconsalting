@@ -12,6 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 50px;
 
     @include respond-to(tablet) {
       flex-direction: column;
@@ -23,6 +24,7 @@
     margin-right: 20px;
 
     @include respond-to(tablet) {
+      margin-right: 0;
       margin-bottom: 40px;
     }
   }
@@ -32,27 +34,50 @@
   }
 }
 
-.company-info {
+.company-info {  
+  @include respond-to(desktop) {
+    font-size: 15px;
+  }
+  @include respond-to(laptop) {
+    font-size: 14px;
+  }
+  @include respond-to(phone) {
+    font-size: 12px;
+  }
+
   &__desc {
-    font-size: rem(30px);
+    font-size: em(28px);
+    
+    @include respond-to(phone) {
+      font-size: 18px;
+    }
   }
 }
 
 .title {
   display: flex;
   flex-direction: column;
+  font-size: inherit;
 
   &__a {
-    margin-bottom: 20px;
-    font-size: rem(24px);
+    font-size: em(24px);
     font-weight: bold;
     text-transform: uppercase;
+    
+    @include respond-to(phone) {
+      font-size: 16px;
+    }
   }
 
   &__name {
-    font-family: serif;
-    font-size: rem(102px);
+    font-family: 'PT serif', serif;
+    font-size: em(102px);
     color: $color-blue;
+    
+    @include respond-to(phone) {
+      font-size: 56px;
+      line-height: 1.2;
+    }
   }
 }
 
@@ -61,6 +86,8 @@
   width: 360px;
   padding: 30px;
   color: #ffffff;
+  border-radius: 5px;
+  overflow: hidden;
   z-index: 10;
   
   @include respond-to(tablet) {
@@ -71,6 +98,7 @@
     text-align: center;
   }
   &__title {
+    margin-bottom: 10px;
     font-size: rem(20px);
     font-weight: bold;
   }
@@ -100,6 +128,11 @@
     background-color: $color-blue;
     opacity: 0.8;
     z-index: -1;
+  }
+
+  &__footer {
+    font-size: rem(14px);
+    color: rgba(#ffffff, .8);
   }
 
 }

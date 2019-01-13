@@ -1,8 +1,9 @@
 @import '_misc/var.scss';
 
 html {
-  font-family: Arial, sans-serif;
+  font-family: 'PT Sans', sans-serif;
   font-size: $root-font-size;
+  line-height: 1.4;
 }
 
 body {
@@ -25,6 +26,7 @@ body {
 
   @include respond-to(tablet) {
     max-width: 640px;
+    width: 90%;
   }
 }
 
@@ -37,6 +39,6 @@ body {
   cursor: pointer;
 }
 
-@import 'common/header';
-@import 'common/content';
-@import 'common/footer';
+@import 'common/header.scss';
+@import 'common/content.scss';
+@import 'common/footer.scss';
