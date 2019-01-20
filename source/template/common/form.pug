@@ -1,0 +1,16 @@
+form.form#form(action='/mail.php' method='POST')
+      .form__header
+        .form__title Нужна профессиональная помощь?
+        .form__text Просто заполните форму:
+      .form-container
+        input(type='hidden')
+        .form__input.input-group
+          input.input-group__field(type='text' name="name" placeholder='Ваше имя')
+        .form__input.input-group
+          input.input-group__field(type='text' name="email" placeholder='E-mail')
+        .form__input.input-group
+          input.input-group__field(type='text' name="phone" placeholder='Телефон')
+        .form__submit
+          button.button.form__button Отправить
+      .form__footer Нажимая на кнопку, вы соглашаетесь с 
+        a.policy-link(href="Personal-Data-Policy.pdf" target="_blank") политикой конфиденциальности.  

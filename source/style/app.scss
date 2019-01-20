@@ -18,6 +18,10 @@ body {
   background-image: linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0.60)), url('/assets/img/background.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+
+  @include respond-to(tablet) {
+    height: auto;
+  }
 }
 
 .container {
@@ -40,6 +44,18 @@ body {
   cursor: pointer;
 }
 
+.policy-link {
+  color: inherit;
+
+  &:hover {
+    text-decoration: none;
+    opacity: 0.8;
+  }
+}
+
 @import 'common/header.scss';
 @import 'common/content.scss';
+@import 'common/flipper.scss';
+@import 'common/form.scss';
+@import 'common/form-answer.scss';
 @import 'common/footer.scss';

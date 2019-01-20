@@ -5,18 +5,7 @@ main.content
         span.title__a консалтинговая фирма
         span.title__name Джи Ай Си
       .company-info__desc C 1997 года на рынке оценки.<br/>Специализируемся на консалтинговых услугах, стоимостном консультировании и оценке.
-    form.content__form.form#form(action='/mail.php' method='POST')
-      .form__header
-        .form__title Нужна профессиональная помощь?
-        .form__text Просто заполните форму:
-      .form-container
-        input(type='hidden')
-        .form__input.input-group
-          input.input-group__field(type='text' name="name" placeholder='Ваше имя')
-        .form__input.input-group
-          input.input-group__field(type='text' name="email" placeholder='E-mail')
-        .form__input.input-group
-          input.input-group__field(type='text' name="phone" placeholder='Телефон')
-        .form__submit
-          button.button.form__button Отправить
-      .form__footer Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности.  
+    .form-wrapper.content__form.flip-container
+      .flipper
+        include ./form
+        include ./answer  
